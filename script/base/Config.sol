@@ -8,9 +8,9 @@ import {Currency} from "v4-core/src/types/Currency.sol";
 /// @notice Shared configuration between scripts
 contract Config {
     /// @dev populated with default anvil addresses
-    IERC20 constant token0 = IERC20(address(0x0165878A594ca255338adfa4d48449f69242Eb8F));
-    IERC20 constant token1 = IERC20(address(0xa513E6E4b8f2a923D98304ec87F64353C4D5C853));
-    IHooks constant hookContract = IHooks(address(0x0));
+    IERC20 constant token0 = IERC20(address(0x6E64b5403C36Ab073cbD1FEb7951E536825ebF60));
+    IERC20 constant token1 = IERC20(address(0x7bbA73CCe26D4b912107d2D8E3963E924faa0fB7));
+    IHooks constant hookContract = IHooks(address(0xD2C6dffE0b54441C281AdB6B8751D1d6114c0040));
 
     Currency constant currency0 = Currency.wrap(address(token0));
     Currency constant currency1 = Currency.wrap(address(token1));

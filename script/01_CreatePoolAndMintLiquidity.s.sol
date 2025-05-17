@@ -26,11 +26,12 @@ contract CreatePoolAndAddLiquidityScript is Script, Constants, Config {
     int24 tickSpacing = 60;
 
     // starting price of the pool, in sqrtPriceX96
-    uint160 startingPrice = 79228162514264337593543950336; // floor(sqrt(1) * 2^96)
+    // uint160 startingPrice = 250544127144244712330; 
+    uint160 startingPrice = 25052893676914917627943681377; // floor(sqrt(100000) * 2^96)
 
     // --- liquidity position configuration --- //
-    uint256 public token0Amount = 1e18;
-    uint256 public token1Amount = 1e18;
+    uint256 public token0Amount = 10000000e18;
+    uint256 public token1Amount = 1000e18;
 
     // range of the position
     int24 tickLower = -600; // must be a multiple of tickSpacing
@@ -87,6 +88,7 @@ contract CreatePoolAndAddLiquidityScript is Script, Constants, Config {
         // multicall to atomically create pool & add liquidity
         vm.broadcast();
         posm.multicall{value: valueToPass}(params);
+        
     }
 
     /// @dev helper function for encoding mint liquidity operation

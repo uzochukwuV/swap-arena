@@ -21,7 +21,7 @@ contract SwapScript is Script, Constants, Config {
     /////////////////////////////////////
 
     // PoolSwapTest Contract address, default to the anvil address
-    PoolSwapTest swapRouter = PoolSwapTest(0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9);
+    PoolSwapTest swapRouter = PoolSwapTest(0x8B5bcC363ddE2614281aD875bad385E0A785D3B9);
 
     // --- pool configuration --- //
     // fees paid by swappers that accrue to liquidity providers
@@ -46,7 +46,7 @@ contract SwapScript is Script, Constants, Config {
         // ------------------------------ //
         // Swap 100e18 token0 into token1 //
         // ------------------------------ //
-        bool zeroForOne = true;
+        bool zeroForOne = false;
         IPoolManager.SwapParams memory params = IPoolManager.SwapParams({
             zeroForOne: zeroForOne,
             amountSpecified: 100e18,
